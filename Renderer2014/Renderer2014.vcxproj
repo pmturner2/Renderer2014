@@ -98,11 +98,12 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GL_Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)/Source;../../Source;./Source/;../Source/;./Renderer2014/Source/</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GL; DEBUG; WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -110,32 +111,66 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Source\MathDefs.h" />
-    <ClInclude Include="Source\Renderable.h" />
-    <ClInclude Include="Source\Renderer.h" />
-    <ClInclude Include="Source\renderer_dx11.h" />
-    <ClInclude Include="Source\renderer_gl.h" />
-    <ClInclude Include="Source\Shader.h" />
-    <ClInclude Include="Source\stdafx.h" />
-    <ClInclude Include="Source\targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="Renderer2014.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Main.cpp" />
-    <ClCompile Include="Source\MathDefs.cpp" />
-    <ClCompile Include="Source\Renderable.cpp" />
-    <ClCompile Include="Source\Renderer.cpp" />
-    <ClCompile Include="Source\renderer_dx11.cpp" />
-    <ClCompile Include="Source\renderer_gl.cpp" />
-    <ClCompile Include="Source\Shader.cpp" />
-    <ClCompile Include="Source\stdafx.cpp" />
+    <ClCompile Include="Engine\BoundingABB.cpp" />
+    <ClCompile Include="Engine\BoundingVolume.cpp" />
+    <ClCompile Include="Engine\Asset.cpp" />
+    <ClCompile Include="Engine\AssetManager.cpp" />
+    <ClCompile Include="Engine\Camera.cpp" />
+    <ClCompile Include="Engine\CubeMapAsset.cpp" />
+    <ClCompile Include="Engine\DX\renderer_dx11.cpp" />
+    <ClCompile Include="Engine\ErrorManager.cpp" />
+    <ClCompile Include="Engine\Game.cpp" />
+    <ClCompile Include="Engine\GameTimer.cpp" />
+    <ClCompile Include="Engine\GL\renderer_gl.cpp" />
+    <ClCompile Include="Engine\Imported\stb_image.c" />
+    <ClCompile Include="Engine\Logger.cpp" />
+    <ClCompile Include="Engine\Main.cpp" />
+    <ClCompile Include="Engine\MathDefs.cpp" />
+    <ClCompile Include="Engine\Mesh.cpp" />
+    <ClCompile Include="Engine\MeshAsset.cpp" />
+    <ClCompile Include="Engine\Renderable.cpp" />
+    <ClCompile Include="Engine\Renderer.cpp" />
+    <ClCompile Include="Engine\SceneGraph.cpp" />
+    <ClCompile Include="Engine\SceneNode.cpp" />
+    <ClCompile Include="Engine\Shader.cpp" />
+    <ClCompile Include="Engine\stdafx.cpp" />
+    <ClCompile Include="Engine\TextureAsset.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="SimpleFS.GLSL" />
-    <None Include="SimpleVS.GLSL" />
+    <ClInclude Include="Engine\BoundingABB.h" />
+    <ClInclude Include="Engine\BoundingVolume.h" />
+    <ClInclude Include="Engine\Asset.h" />
+    <ClInclude Include="Engine\AssetManager.h" />
+    <ClInclude Include="Engine\BST.h" />
+    <ClInclude Include="Engine\Camera.h" />
+    <ClInclude Include="Engine\CubeMapAsset.h" />
+    <ClInclude Include="Engine\DX\renderer_dx11.h" />
+    <ClInclude Include="Engine\ErrorManager.h" />
+    <ClInclude Include="Engine\Game.h" />
+    <ClInclude Include="Engine\GameTimer.h" />
+    <ClInclude Include="Engine\GeometryDefs.h" />
+    <ClInclude Include="Engine\GL\renderer_gl.h" />
+    <ClInclude Include="engine\imported\stb_image.h" />
+    <ClInclude Include="Engine\Logger.h" />
+    <ClInclude Include="Engine\MathDefs.h" />
+    <ClInclude Include="Engine\Mesh.h" />
+    <ClInclude Include="Engine\MeshAsset.h" />
+    <ClInclude Include="Engine\Renderable.h" />
+    <ClInclude Include="Engine\Renderer.h" />
+    <ClInclude Include="Engine\resource.h" />
+    <ClInclude Include="Engine\SceneGraph.h" />
+    <ClInclude Include="Engine\SceneNode.h" />
+    <ClInclude Include="Engine\Shader.h" />
+    <ClInclude Include="Engine\stdafx.h" />
+    <ClInclude Include="Engine\targetver.h" />
+    <ClInclude Include="Engine\TextureAsset.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Game_Specific\Shaders\SimpleFS.GLSL" />
+    <None Include="Game_Specific\Shaders\SimpleVS.GLSL" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

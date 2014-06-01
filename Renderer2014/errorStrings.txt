@@ -1,0 +1,11 @@
+ OK
+ Error Opening File
+ Error Reading File
+ Error: Direct3D
+ Error: Shaders
+ Error: Invalid Parameter
+ Error: Buffer
+ Error: Failed Memory Allocation
+ Error: Divide By Zero
+ Error: Failed to Allocate Resource
+ Error: Unknown
